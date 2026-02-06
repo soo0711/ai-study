@@ -46,6 +46,8 @@ Main entry point: `AiStudyApplication.java`
   → e.g., MemberGetService, MemberSaveService, MemberUpdateService, MemberDeleteService
 - domain: core business models and rules
 - repository: data access abstraction (interfaces only)
+- DTOs: use Java **records** for Request and Response objects
+- Mapper: handles Domain → Response DTO conversion within UseCase only
 
 ## Rules
 
