@@ -8,24 +8,17 @@ This is a **learning repository** for experimenting with Claude Code features (s
 
 ## Build Commands
 
+Windows 환경에서는 `.\gradlew`, Unix/Mac에서는 `./gradlew` 사용.
+
 ```bash
-# Build the project
-./gradlew build
+.\gradlew build          # 빌드
+.\gradlew bootRun        # 실행
+.\gradlew test           # 전체 테스트
+.\gradlew clean build    # 클린 빌드
 
-# Run the application
-./gradlew bootRun
-
-# Run all tests
-./gradlew test
-
-# Run a single test class
-./gradlew test --tests "com.ai_study.AiStudyApplicationTests"
-
-# Run a single test method
-./gradlew test --tests "com.ai_study.AiStudyApplicationTests.contextLoads"
-
-# Clean build
-./gradlew clean build
+# 단일 테스트 실행
+.\gradlew test --tests "com.ai_study.AiStudyApplicationTests"
+.\gradlew test --tests "com.ai_study.AiStudyApplicationTests.contextLoads"
 ```
 
 ## Tech Stack
@@ -48,6 +41,8 @@ Main entry point: `AiStudyApplication.java`
 
 - controller: HTTP request/response only
 - usecase: application-level orchestration
+  → Acts like a Facade: coordinates multiple domain and service calls
+  for a single use case scenario, hiding internal complexity from the controller.
 - service: supporting domain logic
 - domain: core business models and rules
 - repository: data access abstraction
@@ -56,6 +51,7 @@ Main entry point: `AiStudyApplication.java`
 
 - Do not assume production-level requirements
 - Prefer explaining design intent over generating large amounts of code
+- Do not create files unless explicitly asked to implement
 
 ## Notes
 
