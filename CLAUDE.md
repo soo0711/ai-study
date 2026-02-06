@@ -40,12 +40,12 @@ Main entry point: `AiStudyApplication.java`
 ## Project Structure (Conceptual Layers)
 
 - controller: HTTP request/response only
-- usecase: application-level orchestration
-  → Acts like a Facade: coordinates multiple domain and service calls
-  for a single use case scenario, hiding internal complexity from the controller.
-- service: supporting domain logic
+- usecase: application-level orchestration (Facade style)
+  → coordinates multiple service calls to implement a single scenario
+- service: single responsibility per action
+  → e.g., MemberGetService, MemberSaveService, MemberUpdateService, MemberDeleteService
 - domain: core business models and rules
-- repository: data access abstraction
+- repository: data access abstraction (interfaces only)
 
 ## Rules
 
